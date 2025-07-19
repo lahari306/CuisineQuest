@@ -1,0 +1,224 @@
+/* Main Colors */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #ff6b6b;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #333;
+    --border-radius: 0.375rem;
+}
+
+body {
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+}
+
+/* Card Styles */
+.card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card .card-img-top,
+.area-card .card-img-top {
+    height: 160px;
+}
+
+.ingredient-card .card-img-top {
+    height: 140px;
+    padding: 1rem;
+    object-fit: contain;
+}
+
+/* Recipe Detail */
+.recipe-header {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+}
+
+.recipe-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+    border-radius: var(--border-radius);
+}
+
+.recipe-header-content {
+    position: relative;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+}
+
+.instructions {
+    white-space: pre-line;
+    line-height: 1.7;
+}
+
+.ingredient-badge {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.tags-container .badge {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Search Features */
+.search-suggestions {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.popular-keyword {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #e9ecef;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.popular-keyword:hover {
+    background-color: #dee2e6;
+}
+
+/* Footer */
+footer a {
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .recipe-header {
+        min-height: 300px;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .card-img-top {
+        height: 180px;
+    }
+}
+
+/* Grid and List View Styles */
+.results-container.list-view .row {
+    display: block;
+}
+
+.results-container.list-view .card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    height: auto;
+}
+
+.results-container.list-view .card-img-top {
+    width: 200px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.results-container.list-view .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    flex: 1;
+}
+
+.results-container.list-view .card-footer {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgba(0,0,0,0.125);
+    border-top: 0;
+    padding: 1rem;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.results-container.list-view .col-md-4,
+.results-container.list-view .col-lg-3,
+.results-container.list-view .col-md-3,
+.results-container.list-view .col-sm-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.view-toggle .btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+} 
